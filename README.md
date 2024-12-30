@@ -2,7 +2,9 @@
 
 A tool for translating the Dyson Sphere Program game into Italian or other languages.  
 This tool is designed to translate the text into any configured language.  
-Currently, the only completed translation is in Italian V0.1.
+Currently, the only completed translation is in Italian
+
+- Italian V0.1 Alpha
 
 # How to install the mod?
 1. Go to the game's Steam folder.
@@ -34,26 +36,6 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Project Structure
-```
-DYSON-SPHERE-PROGRAM-ITA/
-├── original/
-│       ├── base.txt
-│       └── ...
-├── translated/
-│   └── it/
-│       ├── base.txt
-│       └── ...
-├── venv/
-├── .env
-├── .env.example
-├── .gitignore
-├── LICENSE
-├── main.py
-├── README.md
-└── requirements.txt
-```
-
 ## Running the project
 1. Place the files to be translated in the `original/` folder.
 2. Activate the virtual environment:
@@ -64,7 +46,7 @@ DYSON-SPHERE-PROGRAM-ITA/
    ```bash
    python make.py
    ```
-5. Run the `update` script to update the tests:
+5. Run the `update` script to update the tests: TODO!
    ```bash
    python update.py
    ```
