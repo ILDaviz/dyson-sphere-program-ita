@@ -1,5 +1,6 @@
 """ Script translate texts """
 
+import os
 import time
 import openai
 from dotenv import load_dotenv
@@ -27,18 +28,18 @@ def get_file_content():
     """ Get file content """
 
     files = [
-        '1055/[outsource].txt',
-        '1055/[user].txt',
-        '1055/combat.txt',
-        '1055/creation.txt',
-        '1055/dictionary.txt',
-        '1055/prototype.txt',
-        #'1055/base.txt'
+        '[outsource].txt',
+        '[user].txt',
+        'combat.txt',
+        'creation.txt',
+        'dictionary.txt',
+        'prototype.txt',
+        'base.txt'
     ]
 
     for file in files:
-        input_file = 'original/' + file
-        output_file = 'translated/' + file
+        input_file = 'original/' + os.getenv('LANG_TO_TRANSLATE') + '/' + file
+        output_file = 'translated/' + os.getenv('LANG_TO_TRANSLATE') + '/' + file
         enconding = 'utf-16 le'
 
         index = 0

@@ -1,38 +1,47 @@
 # dyson-sphere-program-ita
 
-Ti piace giocare a Dyson sphere program ma ti piacerebbe la traduzione in Italiano? Questa è la soluzione.
+A tool for translating the Dyson Sphere Program game into Italian or other languages.  
+This tool is designed to translate the text into any configured language.  
+Currently, the only completed translation is in Italian V0.1.
 
-## Comandi da lanciare per generare i tuoi testi in autonomia usando ChatGPT
+# How to install the mod?
+1. Go to the game's Steam folder.
+2. Locate the `Locale` folder inside the game directory.
+3. Create a new folder called `1055`.
+4. Copy the contents of `translated/it` into the `1055` folder.
+5. Add this line `"1055,Italiano,itIT,it,2052,0"` in `Header.txt` under the line `"1033,English,enUS,en,2052,0"`.
+6. Launch the game and change the language :D
 
-### Impostare l'ambiente
+## For Developers
+
+### Set up the environment
 ```bash
 python3 -m venv venv
 ```
 
-#### Attiva il source Mac
+#### Activate the environment on Mac
 ```bash
 source venv/bin/activate
 ```
 
-#### Attiva il source Windows
+#### Activate the environment on Windows
 ```bash
 venv\Scripts\activate
 ```
 
-### Installare le dipendenze
+### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-## Struttura del progetto
+## Project Structure
 ```
 DYSON-SPHERE-PROGRAM-ITA/
 ├── original/
-│   └── 1055/
 │       ├── base.txt
 │       └── ...
 ├── translated/
-│   └── 1055/
+│   └── it/
 │       ├── base.txt
 │       └── ...
 ├── venv/
@@ -45,27 +54,25 @@ DYSON-SPHERE-PROGRAM-ITA/
 └── requirements.txt
 ```
 
-## Funzionalità principali
-1. **Traduzione dei file**: Utilizza OpenAI GPT per tradurre contenuti presenti in `original/1055/` e salvarli in `translated/1055/`.
-2. **Gestione dell'ambiente virtuale**: Fornisce un setup chiaro per creare un ambiente virtuale isolato.
-3. **Gestione file**: Legge e scrive i file nelle directory definite.
-
-## Avvio del progetto
-1. Posizionare i file da tradurre nella cartella `original/1055/`.
-2. Attivare l'ambiente virtuale:
+## Running the project
+1. Place the files to be translated in the `original/` folder.
+2. Activate the virtual environment:
    - **Mac/Linux**: `source venv/bin/activate`
    - **Windows**: `venv\Scripts\activate`
-3. Installare le dipendenze con `pip install -r requirements.txt`.
-4. Lanciare lo script principale:
+3. Install the dependencies with `pip install -r requirements.txt`.
+4. Run the `make` script to create files:
    ```bash
-   python main.py
+   python make.py
    ```
-5. I file tradotti saranno salvati nella directory `translated/1055/`.
+5. Run the `update` script to update the tests:
+   ```bash
+   python update.py
+   ```
+6. Translated files will be saved in the `translated/it/` directory.
 
-## Note aggiuntive
-- **File di configurazione**: Utilizzare il file `.env` per configurazioni specifiche.
-- **Licenza**: Questo progetto è distribuito sotto licenza Apache 2.0.
+## Additional Notes
+- **Configuration files**: Use the `.env` file for specific configurations.
+- **License**: This project is licensed under the Apache 2.0 license.
 
-## Contributi
-Contribuzioni sono benvenute! Aprire un `issue` o inviare una `pull request` per miglioramenti o correzioni.
-
+## Contributions
+Contributions are welcome! Open an `issue` or submit a `pull request` for improvements or fixes.
