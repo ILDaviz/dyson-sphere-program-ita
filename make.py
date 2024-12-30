@@ -12,10 +12,10 @@ def translate_text(text):
         completion = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "Sei un traduttore esperto da inglese a italiano."},
+                {"role": "system", "content": f"Sei un traduttore esperto da inglese a {os.getenv('LANG_TO_TRANSLATE_STRING')}."},
                 {"role": "system", "content": "Mantieni sempre la stessa struttura fornita."},
                 {"role": "system", "content": "Umanizza il testo tradotto."},
-                {"role": "user", "content": f"Traduci in italiano: {text}"}
+                {"role": "user", "content": f"Traduci in {os.getenv('LANG_TO_TRANSLATE_STRING')}: {text}"}
             ],
         )
 
