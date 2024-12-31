@@ -15,6 +15,8 @@ def translate_text(text):
                 {"role": "system", "content": f"Sei un traduttore esperto da inglese a {os.getenv('LANG_TO_TRANSLATE_STRING')}."},
                 {"role": "system", "content": "Mantieni sempre la stessa struttura fornita."},
                 {"role": "system", "content": "Umanizza il testo tradotto."},
+                {"role": "system", "content": "Mantieni il tono del testo originale."},
+                {"role": "system", "content": "Non tradurre i nomi propri."},
                 {"role": "user", "content": f"Traduci in {os.getenv('LANG_TO_TRANSLATE_STRING')}: {text}"}
             ],
         )
@@ -38,7 +40,7 @@ def get_file_content():
     ]
 
     for file in files:
-        input_file = 'original/' + os.getenv('LANG_TO_TRANSLATE') + '/' + file
+        input_file = 'original/' + file
         output_file = 'translated/' + os.getenv('LANG_TO_TRANSLATE') + '/' + file
         enconding = 'utf-16 le'
 
