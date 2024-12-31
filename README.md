@@ -10,7 +10,7 @@ Currently, the only completed translation is in Italian
 1. Go to the game's Steam folder.
 2. Locate the `Locale` folder inside the game directory.
 3. Inside `Locale` create a new folder called `1055`.
-4. Copy the contents of `translated/it` into the `1055` folder.
+4. Copy the contents of `translated/it` into the `1055` folder (remove demo.txt).
 5. Add this line `"1055,Italiano,itIT,it,2052,0"` in `Header.txt` under the line `"1033,English,enUS,en,2052,0"`.
 6. Launch the game and change the language :D
 
