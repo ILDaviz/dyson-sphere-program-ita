@@ -11,6 +11,9 @@ def get_file_content():
 
     files = get_files()
 
+    if not os.path.exists('translated/' + os.getenv('LANG_TO_TRANSLATE')):
+        os.makedirs('translated/' + os.getenv('LANG_TO_TRANSLATE'))
+
     for file in files:
         input_file = 'original/' + file
         output_file = 'translated/' + os.getenv('LANG_TO_TRANSLATE') + '/' + file
